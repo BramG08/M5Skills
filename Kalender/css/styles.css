@@ -1,0 +1,185 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Times New Roman', Times, serif;
+}
+
+html{
+    scroll-behavior: smooth;
+
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background: #f8f9fa;
+    min-height: 100vh;
+}
+
+.calender {
+    max-width: 1200px;
+    margin: 40px auto;
+    background: #fff;
+    border-radius: 12px;
+    box-shadow: 0 2px 16px rgba(0,0,0,0.08);
+    padding: 24px;
+}
+
+.header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 24px;
+}
+
+.header h1 {
+    font-size: 2rem;
+    font-weight: 600;
+    color: #1976d2;
+}
+
+.header button {
+    background: #b2ebf2;
+    border: none;
+    border-radius: 50%;
+    width: 36px;
+    height: 36px;
+    font-size: 1.2rem;
+    color: #1976d2;
+    cursor: pointer;
+    transition: background 0.2s;
+}
+.header button:hover {
+    background: #90caf9;
+}
+
+.weekdays {
+    display: grid;
+    grid-template-columns: repeat(7, 1fr);
+    list-style: none;
+    margin-bottom: 8px;
+    color: #1565c0;
+    font-weight: 600;
+    text-align: center;
+    letter-spacing: 1px;
+}
+
+.days {
+    display: grid;
+    grid-template-columns: repeat(7, 1fr);
+    gap: 4px;
+    list-style: none;
+}
+
+.day {
+    aspect-ratio: 4/3;
+    margin: 2px;
+    border-radius: 5px;
+    background: linear-gradient(135deg, #f0f7fa 0%, #e3f2fd 100%);
+    display: flex;
+    align-items: flex-start;
+    justify-content: flex-end;
+    padding: 8px;
+    font-size: 1.1rem;
+    color: #1976d2;
+    box-shadow: 0 1px 4px rgba(124, 58, 237, 0.06);
+    transition: background 0.2s, box-shadow 0.2s;
+}
+
+.day:hover {
+    background: linear-gradient(135deg, #e3f2fd 0%, #f0f7fa 100%);
+    box-shadow: 0 4px 8px rgba(124, 58, 237, 0.1);
+}
+
+.today {
+    background: linear-gradient(135deg, #d1e8e2 0%, #f1f8f0 100%);
+    color: #2e7d32;
+    font-weight: 700;
+    box-shadow: 0 4px 12px rgba(46, 125, 50, 0.15);
+}
+
+.birthday {
+    background: linear-gradient(135deg, #fff3e0 0%, #ffe0b2 100%);
+    color: #e65100;
+    font-weight: 700;
+    position: relative;
+}
+
+.birthday::after {
+    content: '';
+    position: absolute;
+    width: 4px;
+    height: 4px;
+    border-radius: 50%;
+    background: #e65100;
+    top: 8px;
+    right: 8px;
+}
+
+.event {
+    background: linear-gradient(135deg, #e8f5e9 0%, #c8e6c9 100%);
+    color: #2e7d32;
+    font-weight: 700;
+    position: relative;
+}
+
+.event::after {
+    content: '';
+    position: absolute;
+    width: 4px;
+    height: 4px;
+    border-radius: 50%;
+    background: #2e7d32;
+    top: 8px;
+    right: 8px;
+}
+
+.holiday {
+    background: linear-gradient(135deg, #e8eaf6 0%, #d1c4e9 100%);
+    color: #0d47a1;
+    font-weight: 700;
+    position: relative;
+}
+
+.holiday::after {
+    content: '';
+    position: absolute;
+    width: 4px;
+    height: 4px;
+    border-radius: 50%;
+    background: #0d47a1;
+    top: 8px;
+    right: 8px;
+}
+
+.note {
+    background: linear-gradient(135deg, #e8f5fd 0%, #bbdefb 100%);
+    color: #01579b;
+    font-weight: 700;
+    position: relative;
+}
+
+.note::after {
+    content: '';
+    position: absolute;
+    width: 4px;
+    height: 4px;
+    border-radius: 50%;
+    background: #01579b;
+    top: 8px;
+    right: 8px;
+}
+
+@media (max-width: 600px) {
+    .header h1 {
+        font-size: 1.5rem;
+    }
+
+    .calender {
+        padding: 16px;
+    }
+
+    .day {
+        font-size: 1rem;
+    }
+}
